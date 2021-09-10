@@ -1,4 +1,4 @@
-module somaMulti (
+module ula (
 
     input [15:0] A, 
     input [15:0] B, 

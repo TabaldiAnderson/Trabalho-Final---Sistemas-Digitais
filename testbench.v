@@ -9,7 +9,7 @@ module testbench;
 
     wire [15:0] saida;
 
-    somaMulti m1(A, B, sel, saida);
+    ula u1(A, B, sel, saida);
 
     always #1 clk <= ~clk;
     initial begin

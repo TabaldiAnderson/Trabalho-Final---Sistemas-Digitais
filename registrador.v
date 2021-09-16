@@ -6,7 +6,7 @@ module registrador (
     output reg [15:0] saida
 );
 
-    always @( posedge clk ) begin
+    always @(posedge clk) begin
         if (load == 1) begin
            assign saida = entrada;
         end

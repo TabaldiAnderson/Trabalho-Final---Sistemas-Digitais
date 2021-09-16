@@ -1,25 +1,20 @@
-`include "blocoControle.v"
+`include "projetoFinal.v"
 
 module testbench;
 
-    reg inicio = 0;
+    reg [15:0] A = 3;//16'b0000000000000011; //3
+    reg [15:0] B = 4;//16'b0000000000000100; //4
+    reg [15:0] C = 6;//16'b0000000000000110; //6
+    reg [7:0] K = 8;//8'b00001000;  //8
     reg clk = 0;
     reg rst = 0;
-    //reg [3:0] estado = 4'b0000; 
-    wire [1:0] M0;
-    wire [1:0] M1; 
-    wire [1:0] M2;
-    wire LX;
-    wire LH;
-    wire LS;
-    wire H;
+    reg inicio = 0;
     wire pronto;
+    wire [15:0] resultado;
 
-    blocoControle bloco1(inicio, clk, rst, M0, M1, M2, LX, LH, LS, H, pronto);
+    projetoFinal projeto1(A, B, C, K, inicio, clk, rst, pronto, resultado);
 
     always #1 clk <= ~clk;         
-
-    //always #1 clk <= ~clk;
 
     initial begin
         $dumpvars;
@@ -27,7 +22,7 @@ module testbench;
         #1;
         rst <= 0;
         inicio <= 1;
-        #15;
+        #10;
         $finish;
     end
 endmodule

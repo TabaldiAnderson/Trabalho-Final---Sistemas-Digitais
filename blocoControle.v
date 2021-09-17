@@ -23,11 +23,10 @@ module blocoControle (
             else begin
                 if (pronto)
                     estado <= estado;
-                else if (estado == 8) begin
+                else if (estado == 8)
                     estado <= 0;
-                end else begin
+                else 
                     estado <= estado + 1;
-                end
             end
         end
     end

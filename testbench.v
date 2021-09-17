@@ -2,10 +2,10 @@
 
 module testbench;
 
-    parameter [15:0] A = 3; //3
-    parameter [15:0] B = 4; //4
-    parameter [15:0] C = 6; //6
-    parameter [7:0] K = 8;  //8
+    parameter [15:0] A = 16'b0000000000000011; //3
+    parameter [15:0] B = 16'b0000000000000100; //4
+    parameter [15:0] C = 16'b0000000000000110; //6
+    parameter [7:0] K = 8'b00001000;  //8
 
     reg clk = 0;
     reg rst = 0;
@@ -25,9 +25,8 @@ module testbench;
         rst <= 1;
         #1;
         rst <= 0;
-        #1;
         inicio <= 1;
-        #80;
+        #30;
         $finish;
     end
 endmodule

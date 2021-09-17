@@ -28,9 +28,9 @@ module blocoOperativo (
     wire [15:0] saidaRegH;
 
     assign entradaX = K;
-    assign entrada00Mux0 = 0;
+    assign entrada00Mux0 = 16'b000000000000000;
 
-    multiplexador m0(entradaX, A, B, C, M0, saidaMux0);
+    multiplexador m0(entrada00Mux0, A, B, C, M0, saidaMux0);
     multiplexador m1(saidaMux0, saidaRegX, saidaRegS, saidaRegH, M1, saidaMux1);
     multiplexador m2(saidaRegX, saidaMux0, saidaRegS, saidaRegH, M2, saidaMux2);
 

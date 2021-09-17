@@ -8,6 +8,6 @@ module multiplexador (
     output [15:0] saida
 );
 
-    assign saida = sel == 01 ? (sel == 00 ? D : C) : (sel == 00 ? B : A); 
+    assign saida = sel == 0 ? A : sel == 1 ? B : sel == 2 ? C : sel == 3 ? D : 0;
 
 endmodule

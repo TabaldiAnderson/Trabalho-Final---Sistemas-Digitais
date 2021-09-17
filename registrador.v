@@ -7,9 +7,8 @@ module registrador (
 );
 
     always @(posedge clk) begin
-        if (load == 1) begin
+        if (load == 1)
            assign saida = entrada;
-        end
     end
 
 endmodule

@@ -2,10 +2,10 @@
 
 module testbench;
 
-    parameter [15:0] A = 16'b0000000000000011; //3
-    parameter [15:0] B = 16'b0000000000000100; //4
-    parameter [15:0] C = 16'b0000000000000110; //6
-    parameter [7:0] K = 8'b00001000;  //8
+    parameter [15:0] A = 5;  //3
+    parameter [15:0] B = 3; //4
+    parameter [15:0] C = 9;  //6
+    parameter [7:0] K = 4; //8
 
     reg clk = 0;
     reg rst = 0;

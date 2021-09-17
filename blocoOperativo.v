@@ -28,17 +28,17 @@ module blocoOperativo (
     wire [15:0] saidaRegH;
 
     assign entradaX = K;
-    assign entrada00Mux0 = 16'b000000000000000;
+    assign entrada00Mux0 = 0;
+
+    registrador regX(entradaX, clk, LX, saidaRegX);
+    registrador regS(saidaUla, clk, LS, saidaRegS);
+    registrador regH(saidaUla, clk, LH, saidaRegH);
 
     multiplexador m0(entrada00Mux0, A, B, C, M0, saidaMux0);
     multiplexador m1(saidaMux0, saidaRegX, saidaRegS, saidaRegH, M1, saidaMux1);
     multiplexador m2(saidaRegX, saidaMux0, saidaRegS, saidaRegH, M2, saidaMux2);
 
     ula ula1(saidaMux2, saidaMux1, H, saidaUla);
-
-    registrador regX(entradaX, clk, LX, saidaRegX);
-    registrador regS(saidaUla, clk, LS, saidaRegS);
-    registrador regH(saidaUla, clk, LH, saidaRegH);
 
     assign resultado = saidaRegS;
 

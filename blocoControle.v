@@ -22,8 +22,6 @@ module blocoControle (
                 estado <= estado;
             else begin
                 if (pronto)
-                    estado <= estado;
-                else if (estado == 8)
                     estado <= 0;
                 else 
                     estado <= estado + 1;

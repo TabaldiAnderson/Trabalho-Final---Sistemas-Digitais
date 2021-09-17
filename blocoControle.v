@@ -48,8 +48,8 @@ module blocoControle (
     assign LH = estado == 3 ? 1 : estado == 5 ? 1 : 0;
     assign H = estado == 2 ? 1 : estado == 3 ? 1 : estado == 4 ? 1 : 0;
     assign M0 = estado == 3 ? 1 : estado == 4 ? 2 : estado == 6 ? 3 : 0;
-    assign M1 = estado == 2 ? 1 : estado == 3 ? 0 : estado == 5 ? 2 : estado == 6 ? 0 : 0;  
+    assign M1 = estado == 2 ? 1 : estado == 5 ? 2 : 0;  
     assign M2 = estado == 3 ? 2 : estado == 5 ? 3 : estado == 6 ? 3 : 0;
     assign pronto = estado == 7 ? 1 : 0;
-    
+
 endmodule
